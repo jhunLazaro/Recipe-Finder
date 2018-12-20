@@ -13,6 +13,15 @@ export const clearResults = () => {
     elements.searchResPages.innerHTML = '';
 
 };
+export const HighlSelected = id => {
+    const resultsArr = Array.from(document.querySelectorAll('.results__link'));
+    resultsArr.forEach(el => {
+        el.classList.remove('results__link--active');
+    });
+    //a[] css selector a for attributes
+    document.querySelector(`.results__link[href="#${id}"]`).classList.add('results__link--active');
+    
+};
 /**
  * title = 'Pasta with tomato and spinach'
  * acc: 0 / acc + cur.length = 5 / newTitle = ['Pasta']
@@ -20,7 +29,7 @@ export const clearResults = () => {
  * acc: 9 / acc + cur.length = 15 / newTitle = ['Pasta', 'with', 'tomato']
  * acc: 15 / acc + cur.length = 18 / newTitle = ['Pasta', 'with', 'tomato'] this >17
  */
-const limitRecipeTitle = (title, limit = 17) => {
+export const limitRecipeTitle = (title, limit = 17) => {
     const newTitle = [];
     if (title.length > limit) {
         title.split(' ').reduce((acc, cur) => {
@@ -30,7 +39,7 @@ const limitRecipeTitle = (title, limit = 17) => {
             return acc + cur.length;
         }, 0);
         //return result
-        return `${newTitle.join(' ')} ...`; //join oppsite of split
+        return `${newTitle.join(' ')} ...`; //join opposite of split
     }
     return title;
 };
@@ -60,7 +69,6 @@ const createButton = (page, type) => `
                 <svg class="search__icon">
                     <use href="img/icons.svg#icon-triangle-${type === 'prev' ? 'left' : 'right'}"></use>
                 </svg>
-                
             </button>
 
 `;
@@ -87,7 +95,6 @@ export const renderResult = (recipes, page = 1, resPerPage = 10) => {// api give
     const start = (page - 1) * resPerPage; //1-1 * 10 = 0 / in page 2 (2-1) * 10 = 10
     const end = page * resPerPage;
     recipes.slice(start, end).forEach(renderRecipe);
-
     //Render pagination button
     renderButton(page, recipes.length, resPerPage);
 };

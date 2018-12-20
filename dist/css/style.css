@@ -42,7 +42,7 @@ body {
       border-radius: 0; } }
 
 .btn, .btn-small, .btn-small:link, .btn-small:visited {
-  background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
+  background-image: linear-gradient(to right bottom, #7a4736, #b3998d);
   border-radius: 10rem;
   border: none;
   text-transform: uppercase;
@@ -206,7 +206,7 @@ body {
     visibility: visible;
     opacity: 1; }
   .likes__icon {
-    fill: #F59A83;
+    fill: #e85462;
     height: 3.75rem;
     width: 3.75rem; }
   .likes__panel {
@@ -243,7 +243,9 @@ body {
     transform: translateY(-2px); }
   .results__link--active,
   .likes__link--active {
-    background-color: #F9F5F3; }
+    background-color: rgb(212, 180, 164); 
+    color: #f1f3ec }
+  
   .results__fig,
   .likes__fig {
     flex: 0 0 5.5rem;
@@ -274,7 +276,7 @@ body {
   .results__name,
   .likes__name {
     font-size: 1.3rem;
-    color: #F59A83;
+    color: #272524;
     text-transform: uppercase;
     font-weight: 600;
     margin-bottom: .3rem; }
@@ -372,7 +374,7 @@ body {
     opacity: 1;
     transform: translateY(0); }
   .recipe__love {
-    background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
+    background-image: linear-gradient(to right bottom, rgb(223, 197, 193), rgb(240, 169, 164));
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -390,7 +392,7 @@ body {
     .recipe__love svg {
       height: 2.75rem;
       width: 2.75rem;
-      fill: #fff; }
+      fill: rgb(230, 58, 58); }
   .recipe__ingredients {
     padding: 4rem 5rem;
     font-size: 1.5rem;
