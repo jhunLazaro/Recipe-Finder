@@ -1,7 +1,7 @@
-import { elements } from "./base";
 import { Fraction } from "fractional";
+import { elements } from "./base";
 
-const formatCount = count => {
+const formatCount = (count) => {
   if (count) {
     // count 2.5 --> 2 1/2
     // count 0.5 --> 1/2
@@ -9,7 +9,7 @@ const formatCount = count => {
     const [int, dec] = newCount
       .toString()
       .split(".")
-      .map(el => parseInt(el));
+      .map((el) => parseInt(el));
 
     if (!dec) return newCount;
 
@@ -24,7 +24,7 @@ const formatCount = count => {
   }
   return "?";
 };
-const createIngredients = ingredient => `
+const createIngredients = (ingredient) => `
     <li class="recipe__item">
         <svg class="recipe__icon">
             <use href="img/icons.svg#icon-check"></use>
@@ -98,7 +98,7 @@ export const renderRecipe = (recipe, isLiked) => {
             <div class="recipe__ingredients">
                 <ul class="recipe__ingredient-list">
                     ${recipe.ingredients
-                      .map(el => createIngredients(el))
+                      .map((el) => createIngredients(el))
                       .join("")}
                     
                 </ul>
@@ -133,7 +133,7 @@ export const renderRecipe = (recipe, isLiked) => {
   elements.recipe.insertAdjacentHTML("afterbegin", markup);
 };
 
-export const updateServeIng = recipe => {
+export const updateServeIng = (recipe) => {
   // update Servings
   document.querySelector(".recipe__info-data--people").textContent =
     recipe.servings;

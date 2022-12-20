@@ -1,7 +1,7 @@
 import { elements } from "./base";
 import * as searchView from "./searchView";
 
-export const toggleLikedBtn = isLiked => {
+export const toggleLikedBtn = (isLiked) => {
   const iconStr = isLiked ? "icon-heart" : "icon-heart-outlined";
   document
     .querySelector(".recipe__love use")
@@ -9,11 +9,11 @@ export const toggleLikedBtn = isLiked => {
   //img/icons.svg#icon-heart-outlined
 };
 
-export const toggleLikesMenu = numLikes => {
+export const toggleLikesMenu = (numLikes) => {
   elements.likesField.style.visibility = numLikes > 0 ? "visible" : "hidden";
 };
 
-export const renderLikesMenu = like => {
+export const renderLikesMenu = (like) => {
   const markup = `
         <li>
             <a class="likes__link" href="#${like.id}">
@@ -34,7 +34,7 @@ export const renderLikesMenu = like => {
   elements.likesMenuList.insertAdjacentHTML("beforebegin", markup);
 };
 
-export const dellikes = id => {
+export const dellikes = (id) => {
   const del = document.querySelector(`.likes__link[href="#${id}"]`);
   if (del) del.parentElement.removeChild(del);
 };
