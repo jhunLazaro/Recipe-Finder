@@ -1,5 +1,5 @@
 import axios from "axios"; // importing package is not using a Path only package name
-import { Food2ForkToken, proxy } from "../config";
+import { Food2ForkToken, proxy2 } from "../config";
 
 export default class Search {
   constructor(query) {
@@ -11,7 +11,7 @@ export default class Search {
     axios({
       method: "get",
       url: `/search/?page=1&query=${this.query}`,
-      baseURL: `${proxy}https://food2fork.ca/api/recipe`,
+      baseURL: `${proxy2}https://food2fork.ca/api/recipe`,
       headers: {
         Authorization: Food2ForkToken,
         "Access-Control-Allow-Origin": "*",
